@@ -3,9 +3,7 @@ import './App.module.scss'
 function App() {
   return (
     <>
-      <div>
-          <h1>React</h1>
-      </div>
+      <h1>Hello</h1>
     </>
   )
 }
