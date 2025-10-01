@@ -1,0 +1,30 @@
+@use '@/styles/helpers' as *;
+
+.root {
+  padding: 40px;
+  background-color: var(--color-white);
+  border-right: var(--border);
+}
+
+.header {
+
+}
+
+.logo {
+  padding-left: 45px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    aspect-ratio: 1;
+    background: url("@/assets/icons/logo.svg") center / contain no-repeat;
+  }
+}
+
+.controls {
+
+}

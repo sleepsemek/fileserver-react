@@ -1,12 +1,10 @@
 import '@/App.module.scss'
-import Sidebar from "@/components/Sidebar/Sidebar.tsx";
+import SidebarLayout from "@/layouts/SidebarLayout/SidebarLayout.tsx";
 
-function App() {
+export default function App() {
   return (
     <>
-      <Sidebar />
+      <SidebarLayout />
     </>
   )
 }
-
-export default App
