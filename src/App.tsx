@@ -1,9 +1,10 @@
-import './App.module.scss'
+import '@/App.module.scss'
+import Sidebar from "@/components/Sidebar/Sidebar.tsx";
 
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <Sidebar />
     </>
   )
 }
