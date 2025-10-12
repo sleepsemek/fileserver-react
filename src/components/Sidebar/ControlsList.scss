@@ -1,0 +1,16 @@
+.controls {
+  &__list {
+    display: grid;
+    row-gap: 10px;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 500;
+  }
+}

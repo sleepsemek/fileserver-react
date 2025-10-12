@@ -1,15 +1,17 @@
 import "./Sidebar.scss"
 import NavList from "./NavList.tsx";
 import {
-    IconAnalytics,
+    IconAnalytics, IconArchive,
     IconDocuments,
     IconFavorites,
     IconHome,
-    IconPhotos,
+    IconPhotos, IconRecycle, IconSettings,
     IconVideos
 } from "../Icon.tsx";
 import BurgerButton from "./BurgerButton.tsx";
 import {useState} from "react";
+import NotificationIcon from "./NotificationIcon.tsx";
+import ControlsList from "./ControlsList.tsx";
 
 type SidebarProps = {
     title: string,
@@ -18,7 +20,7 @@ type SidebarProps = {
 export default function Sidebar({ title } : SidebarProps) {
     const [isActive, setIsActive] = useState(false)
 
-    const controlsElements = [
+    const navElements = [
         {
             name: "Home",
             icon: {
@@ -78,16 +80,48 @@ export default function Sidebar({ title } : SidebarProps) {
         },
     ]
 
+    const controlsElements = [
+        {
+            name: "Archive",
+            icon: {
+                icon: IconArchive,
+                color: '#0A0F1F',
+                background: true,
+                size: 30
+            }
+        },
+        {
+            name: "Recycle",
+            icon: {
+                icon: IconRecycle,
+                color: '#0A0F1F',
+                background: true,
+                size: 30
+            }
+        },
+        {
+            name: "Settings",
+            icon: {
+                icon: IconSettings,
+                color: '#0A0F1F',
+                background: true,
+                size: 30
+            }
+        },
+    ]
+
     return (
         <aside className={`sidebar ${isActive ? '' : 'collapsed'}`}>
             <header className="sidebar__header">
                 <h1 className="sidebar__logo">
                     { title }
                 </h1>
+                <NotificationIcon />
                 <BurgerButton onClick={() => setIsActive(active => !active)} isActive={isActive}/>
             </header>
             <div className={`sidebar__controls ${isActive ? '' : 'hidden-mobile'}`}>
-                <NavList navElements={controlsElements} />
+                <NavList navElements={navElements} />
+                <ControlsList controlsElements={controlsElements} />
             </div>
         </aside>
     )

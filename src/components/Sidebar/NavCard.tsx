@@ -1,10 +1,15 @@
 import "./NavCard.scss"
-import type {NavCardProps} from "./NavList.tsx";
-import Icon from "../Icon.tsx";
+import Icon, {type IconProps} from "../Icon.tsx";
+
+export type NavCardProps = {
+    name: string
+    icon: IconProps
+    hasNew?: boolean | null
+}
 
 export default function NavCard({ name, icon, hasNew } : NavCardProps) {
     return (
-        <div className="nav-card">
+        <a className="nav-card">
             <div className="nav-card__header">
                 <Icon {...icon} />
                 {hasNew && (
@@ -12,6 +17,6 @@ export default function NavCard({ name, icon, hasNew } : NavCardProps) {
                 )}
             </div>
             <div className="nav-card__title h4">{name}</div>
-        </div>
+        </a>
     )
 }

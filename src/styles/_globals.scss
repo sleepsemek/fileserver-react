@@ -56,7 +56,7 @@ a {
   color: inherit; // наследуем от body
 
   @include hover {
-    //color: var(--color-white);
+    color: var(--color-pink);
   }
 
   &[class] { // отключаем подчеркивание у тех ссылок, у которых уже есть классы

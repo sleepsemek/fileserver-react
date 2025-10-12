@@ -1,15 +1,8 @@
 import "./NavList.scss"
-import NavCard from "./NavCard.tsx";
-import type {IconProps} from "../Icon.tsx";
+import NavCard, {type NavCardProps} from "./NavCard.tsx";
 
 export type NavListProps = {
     navElements: NavCardProps[]
-}
-
-export type NavCardProps = {
-    name: string
-    icon: IconProps
-    hasNew?: boolean | null
 }
 
 export default function NavList({ navElements } : NavListProps) {
