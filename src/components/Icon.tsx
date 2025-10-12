@@ -1,5 +1,6 @@
 import "./Icon.scss"
 import {type CSSProperties, type FC, type SVGProps} from "react";
+import tinycolor from 'tinycolor2';
 
 export type IconComponentType = FC<SVGProps<SVGSVGElement>>
 
@@ -9,15 +10,6 @@ export type IconProps = {
     background?: boolean
     size?: number
     ariaLabel?: string
-}
-
-function hexToRGBA(hex: string, alpha: number) {
-    const sanitizedHex = hex.replace('#', '')
-    const bigint = parseInt(sanitizedHex, 16)
-    const r = (bigint >> 16) & 255
-    const g = (bigint >> 8) & 255
-    const b = bigint & 255
-    return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }
 
 export default function Icon({
@@ -34,7 +26,7 @@ export default function Icon({
         width: size,
         height: size,
         borderRadius: 8,
-        backgroundColor: background ? hexToRGBA(color, 0.1) : 'transparent',
+        backgroundColor: background ? tinycolor(color).setAlpha(0.15).toHex8String() : 'transparent',
         padding: background ? '5px' : undefined,
         color: color,
         lineHeight: 0
