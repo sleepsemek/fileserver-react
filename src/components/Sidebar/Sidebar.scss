@@ -1,0 +1,47 @@
+@use '@/styles/helpers' as *;
+
+.sidebar {
+  height: 100dvh;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 59px;
+  background-color: var(--color-white);
+
+  @include mobile-above {
+    padding: 40px;
+    border-right: var(--border);
+  }
+
+  &__logo {
+    padding-left: 45px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      aspect-ratio: 1;
+      background: url("@/assets/icons/logo.svg") center / contain no-repeat;
+    }
+  }
+
+  &.collapsed {
+    @include mobile {
+      height: unset;
+      border-bottom: var(--border);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__controls {
+
+  }
+}

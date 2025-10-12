@@ -1,10 +1,12 @@
 import '@/App.module.scss'
-import SidebarLayout from "@/layouts/SidebarLayout/SidebarLayout.tsx";
+import Sidebar from "./components/Sidebar/Sidebar.tsx";
+import Layout from "./components/layout/Layout.tsx";
 
 export default function App() {
   return (
-    <>
-      <SidebarLayout />
-    </>
+    <Layout>
+        <Sidebar title="Fileserver"/>
+        <main></main>
+    </Layout>
   )
 }

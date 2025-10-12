@@ -1,0 +1,48 @@
+@use "@/styles/helpers" as *;
+
+.burger-button {
+  @include square(22px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--color-dark);
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  position: relative;
+
+  &__line {
+    width: 100%;
+    height: 2px;
+    border-radius: 1rem;
+    background-color: currentColor;
+    transition-duration: var(--transition-duration);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+
+    @include square(44px);
+    @include abs-center;
+  }
+
+  &.is-active {
+    .burger-button {
+      &__line {
+        &:first-child {
+          transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:last-child {
+          transform: rotate(-45deg) translate(7px, -7px);
+        }
+      }
+    }
+  }
+}

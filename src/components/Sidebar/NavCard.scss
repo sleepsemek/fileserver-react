@@ -1,0 +1,38 @@
+@use "@/styles/helpers" as *;
+
+.nav-card {
+  display: grid;
+  row-gap: 10px;
+  height: 100%;
+  background-color: var(--color-white-opaque);
+  border: var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  cursor: pointer;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.new-badge {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-gray-40);
+  padding-right: 12px;
+  position: relative;
+
+  &::before {
+    @include square(8px);
+
+    border-radius: 1rem;
+    content: '';
+    position: absolute;
+    translate: 0 -50%;
+    top: 50%;
+    right: 0;
+    background-color: var(--color-pink);
+  }
+}

@@ -1,7 +1,8 @@
 @use 'helpers' as *;
 
 :root {
-  --color-white: #FFF;
+  --color-white: rgba(255, 255, 255, 0.5);
+  --color-white-opaque: #FFF;
   --color-black: #000;
 
   --color-dark: #0A0F1F;
@@ -9,12 +10,14 @@
   --color-gray-40: #666666;
   --color-gray-20: #333333;
 
-  --color-background: #F9F8FF;
+  --color-background: rgba(249, 248, 255, 0.8);
   --color-container: #DEF0FC;
   --color-container-secondary: #FCE9DE;
   --color-container-tertiary: #DEFCF3;
 
-  --border-color: #DDDFE3;
+  --color-pink: #E87D7D;
+
+  --border-color: rgba(0, 0, 0, 0.1);
   --border: 1px solid var(--border-color);
 
   --font-family-base: JakartaSans, sans-serif;

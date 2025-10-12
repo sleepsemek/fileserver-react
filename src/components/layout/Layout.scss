@@ -1,0 +1,29 @@
+@use '@/styles/helpers' as *;
+
+.layout {
+  &__background {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("@/assets/images/background.jpg") no-repeat center / contain;
+    background-size: 150% auto;
+    filter: blur(20px);
+  }
+
+  &__content  {
+    --sidebar-width: 400px;
+
+    display: grid;
+    position: relative;
+    background-color: var(--color-background);
+
+    @include tablet {
+      --sidebar-width: 233px;
+    }
+
+    @include mobile-above {
+      grid-template-columns: var(--sidebar-width) auto;
+    }
+
+  }
+}
