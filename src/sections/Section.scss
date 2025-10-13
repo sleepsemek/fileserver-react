@@ -1,0 +1,14 @@
+.section {
+  display: grid;
+  row-gap: 24px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+
+  &__title {
+
+  }
+}
