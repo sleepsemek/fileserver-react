@@ -1,5 +1,5 @@
 import "./ControlsList.scss"
-import Icon, {type IconProps} from "../Icon.tsx";
+import Icon, {type IconProps} from "../../Icon.tsx";
 
 export type ControlsItemProps = {
     name: string

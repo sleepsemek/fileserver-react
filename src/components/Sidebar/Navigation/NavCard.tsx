@@ -1,5 +1,5 @@
 import "./NavCard.scss"
-import Icon, {type IconProps} from "../Icon.tsx";
+import Icon, {type IconProps} from "../../Icon.tsx";
 
 export type NavCardProps = {
     name: string

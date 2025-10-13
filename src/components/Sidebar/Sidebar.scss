@@ -1,7 +1,6 @@
 @use '@/styles/helpers' as *;
 
 .sidebar {
-  height: 100dvh;
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -11,6 +10,8 @@
   @include mobile-above {
     padding: 40px;
     border-right: var(--border);
+    height: 100dvh;
+    overflow: scroll;
   }
 
   &__logo {

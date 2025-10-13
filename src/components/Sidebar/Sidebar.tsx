@@ -1,5 +1,5 @@
 import "./Sidebar.scss"
-import NavList from "./NavList.tsx";
+import NavList from "./Navigation/NavList.tsx";
 import {
     IconAnalytics, IconArchive,
     IconDocuments,
@@ -9,16 +9,14 @@ import {
     IconVideos
 } from "../Icon.tsx";
 import BurgerButton from "./BurgerButton.tsx";
-import {useState} from "react";
 import NotificationIcon from "./NotificationIcon.tsx";
-import ControlsList from "./ControlsList.tsx";
+import ControlsList from "./Controls/ControlsList.tsx";
 
 type SidebarProps = {
     title: string,
 }
 
 export default function Sidebar({ title } : SidebarProps) {
-    const [isActive, setIsActive] = useState(false)
 
     const navElements = [
         {
@@ -111,15 +109,14 @@ export default function Sidebar({ title } : SidebarProps) {
     ]
 
     return (
-        <aside className={`sidebar ${isActive ? '' : 'collapsed'}`}>
+        <aside className="sidebar">
             <header className="sidebar__header">
                 <h1 className="sidebar__logo">
                     { title }
                 </h1>
                 <NotificationIcon />
-                <BurgerButton onClick={() => setIsActive(active => !active)} isActive={isActive}/>
             </header>
-            <div className={`sidebar__controls ${isActive ? '' : 'hidden-mobile'}`}>
+            <div className="sidebar__controls">
                 <NavList navElements={navElements} />
                 <ControlsList controlsElements={controlsElements} />
             </div>
