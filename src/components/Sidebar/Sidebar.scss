@@ -1,8 +1,6 @@
 @use '@/styles/helpers' as *;
 
 .sidebar {
-  position: sticky;
-  top: 0;
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -10,10 +8,16 @@
   background-color: var(--color-white);
 
   @include mobile-above {
+    position: sticky;
+    top: 0;
     padding: 40px;
     border-right: var(--border);
     height: 100dvh;
     overflow: auto;
+  }
+
+  @include mobile {
+    border-bottom: var(--border);
   }
 
   &__logo {
@@ -28,13 +32,6 @@
       height: 100%;
       aspect-ratio: 1;
       background: url("@/assets/icons/logo.svg") center / contain no-repeat;
-    }
-  }
-
-  &.collapsed {
-    @include mobile {
-      height: unset;
-      border-bottom: var(--border);
     }
   }
 
