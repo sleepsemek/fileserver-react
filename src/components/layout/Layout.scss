@@ -18,7 +18,7 @@
     background-color: var(--color-background);
 
     @include tablet {
-      --sidebar-width: 233px;
+      --sidebar-width: 300px;
     }
 
     @include mobile-above {

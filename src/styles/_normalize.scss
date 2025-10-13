@@ -165,24 +165,24 @@ button {
   (за исключением тех, у которых уже указан
   атрибут fill со значением 'none' или начинается с 'url')
  */
-:where([fill]:not(
-  [fill="none"],
-  [fill^="url"]
-)) {
-  fill: currentcolor;
-}
+//:where([fill]:not(
+//  [fill="none"],
+//  [fill^="url"]
+//)) {
+//  fill: currentcolor;
+//}
 
 /**
   Приводим к единому цвету svg-элементы
   (за исключением тех, у которых уже указан
   атрибут stroke со значением 'none')
  */
-:where([stroke]:not(
-  [stroke="none"],
-  [stroke^="url"]
-)) {
-  stroke: currentcolor;
-}
+//:where([stroke]:not(
+//  [stroke="none"],
+//  [stroke^="url"]
+//)) {
+//  stroke: currentcolor;
+//}
 
 /**
   Чиним баг задержки смены цвета при взаимодействии с svg-элементами

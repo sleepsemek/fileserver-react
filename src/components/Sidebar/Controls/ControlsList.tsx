@@ -8,8 +8,8 @@ interface ControlsListProps {
 export default function ControlsList({controlsElements}: ControlsListProps) {
     return (
         <ul className="controls__list">
-            {controlsElements.map((controlsItem => (
-                <ControlsItem {...controlsItem}/>
+            {controlsElements.map(((controlsItem, key) => (
+                <ControlsItem {...controlsItem} key={key}/>
             )))}
         </ul>
     )

@@ -113,7 +113,7 @@ export default function Sidebar({ title } : SidebarProps) {
                 <a href="" className="sidebar__logo h1">
                     { title }
                 </a>
-                <NotificationIcon />
+                <NotificationIcon isActive={true} />
             </header>
             <div className="sidebar__controls">
                 <NavList navElements={navElements} />

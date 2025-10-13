@@ -20,16 +20,11 @@ export default function Icon({
     ariaLabel = "",
 }: IconProps) {
     const wrapperStyle: CSSProperties = {
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
         width: size,
         height: size,
-        borderRadius: 8,
         backgroundColor: background ? tinycolor(color).setAlpha(0.15).toHex8String() : 'transparent',
         padding: background ? '5px' : undefined,
         color: color,
-        lineHeight: 0
     }
 
     return (
