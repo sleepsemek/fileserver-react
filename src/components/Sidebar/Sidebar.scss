@@ -1,6 +1,8 @@
 @use '@/styles/helpers' as *;
 
 .sidebar {
+  position: sticky;
+  top: 0;
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -11,7 +13,7 @@
     padding: 40px;
     border-right: var(--border);
     height: 100dvh;
-    overflow: scroll;
+    overflow: auto;
   }
 
   &__logo {

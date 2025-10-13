@@ -9,7 +9,7 @@ export type NavCardProps = {
 
 export default function NavCard({ name, icon, hasNew } : NavCardProps) {
     return (
-        <a className="nav-card">
+        <a href="" className="nav-card">
             <div className="nav-card__header">
                 <Icon {...icon} />
                 {hasNew && (

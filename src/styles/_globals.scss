@@ -66,7 +66,8 @@ a {
 }
 
 :focus-visible { // при фокусировке с клавиатуры
-  outline: 2px dashed var(--color-container-secondary);
+  outline: 2px dashed var(--color-dark);
+  border-radius: 4px;
   outline-offset: 4px;
   transition-duration: 0s !important;
 }

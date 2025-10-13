@@ -8,7 +8,6 @@ import {
     IconPhotos, IconRecycle, IconSettings,
     IconVideos
 } from "../Icon.tsx";
-import BurgerButton from "./BurgerButton.tsx";
 import NotificationIcon from "./NotificationIcon.tsx";
 import ControlsList from "./Controls/ControlsList.tsx";
 
@@ -111,9 +110,9 @@ export default function Sidebar({ title } : SidebarProps) {
     return (
         <aside className="sidebar">
             <header className="sidebar__header">
-                <h1 className="sidebar__logo">
+                <a href="" className="sidebar__logo h1">
                     { title }
-                </h1>
+                </a>
                 <NotificationIcon />
             </header>
             <div className="sidebar__controls">
