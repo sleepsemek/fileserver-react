@@ -1,19 +1,21 @@
-import style from "./IconButton.module.scss"
+import "./IconButton.scss"
 import type {ReactNode} from "react";
 
 type IconButtonProps = {
-    onClick?: () => void;
-    ariaLabel: string;
+    onClick?: () => void
+    ariaLabel: string
     icon: ReactNode
+    type?: "submit" | "reset" | "button"
 }
 
-export default function IconButton({onClick, ariaLabel, icon} : IconButtonProps) {
+export default function IconButton({onClick, ariaLabel, icon, type} : IconButtonProps) {
     return (
         <button
-            className={style.root}
+            className="icon-button"
             onClick={onClick}
             aria-label={ariaLabel}
-            type={"button"}
+            title={ariaLabel}
+            type={type ?? "button"}
         >
             {icon}
         </button>

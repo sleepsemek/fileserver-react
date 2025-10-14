@@ -8,7 +8,7 @@ import {
     IconPhotos, IconRecycle, IconSettings,
     IconVideos
 } from "../Icon.tsx";
-import NotificationIcon from "./NotificationIcon.tsx";
+import NotificationButton from "./NotificationButton.tsx";
 import ControlsList from "./Controls/ControlsList.tsx";
 
 type SidebarProps = {
@@ -113,7 +113,7 @@ export default function Sidebar({ title } : SidebarProps) {
                 <a href="" className="sidebar__logo h1">
                     { title }
                 </a>
-                <NotificationIcon isActive={true} />
+                <NotificationButton hasNotification={true} />
             </header>
             <div className="sidebar__controls">
                 <NavList navElements={navElements} />
