@@ -1,8 +1,8 @@
 import "./FileCard.scss"
 import Icon, {IconAudio, IconDocument, IconEye, IconHeart, IconPen, IconPlay, IconVolume} from "../Icon.tsx";
-import type {ReactNode} from "react";
+import {type ReactNode, useState} from "react";
 import IconButton from "../IconButton.tsx";
-import AudioRange from "../AudioRange.tsx";
+import SeekBar from "../SeekBar.tsx";
 
 export type FileCardProps = {
     name: string
@@ -21,7 +21,11 @@ const cardVariants = ["", "file-card--secondary", "file-card--tertiary", "file-c
 
 export default function FileCard({ name, fileType, filePreview } : FileCardProps) {
     const hasTextHeader = fileType === "audio" || fileType === "document"
-    const randomCardVariant = cardVariants[Math.floor(Math.random() * 4)]
+    const [randomCardVariant] = useState(() => cardVariants[Math.floor(Math.random() * 4)])
+    const [isPlaying, setIsPlaying] = useState(false)
+    const [seekBarProgressPercent, setSeekBarProgress] = useState(0)
+
+    const togglePlayMenu = () => setIsPlaying((prevState) => !prevState)
 
     return (
         <div className={`file-card ${randomCardVariant}`}>
@@ -36,12 +40,25 @@ export default function FileCard({ name, fileType, filePreview } : FileCardProps
             <div className="file-card__controls">
                 {fileType === "audio" && (
                     <>
-                        <IconButton ariaLabel="Mute" icon={<Icon icon={IconVolume} size={24}/>} />
-                        <AudioRange />
-                        <IconButton ariaLabel="Play" icon={<Icon icon={IconPlay} size={24}/>} />
+                        {isPlaying && (
+                            <>
+                                <IconButton ariaLabel="Mute" icon={<Icon icon={IconVolume} size={24}/>} />
+                                <SeekBar value={seekBarProgressPercent} onChange={setSeekBarProgress}/>
+                            </>
+                        )}
+                        {!isPlaying && (
+                            <>
+                                <IconButton ariaLabel="Rename" icon={<Icon icon={IconPen} size={24}/>} />
+                                <IconButton ariaLabel="View" icon={<Icon icon={IconEye} size={24}/>} />
+                            </>
+                        )}
+                        <IconButton ariaLabel="Play" onClick={togglePlayMenu} icon={<Icon icon={IconPlay} size={24}/>} />
+                        {!isPlaying && (
+                            <IconButton ariaLabel="Add to Favorites" icon={<Icon icon={IconHeart} size={24}/>} />
+                        )}
                     </>
                 )}
-                {fileType !== "audio" && fileType !== "video" && (
+                {fileType !== "audio" && (
                     <>
                         <IconButton ariaLabel="Rename" icon={<Icon icon={IconPen} size={24}/>} />
                         <IconButton ariaLabel="View" icon={<Icon icon={IconEye} size={24}/>} />
