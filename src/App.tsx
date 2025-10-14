@@ -10,18 +10,23 @@ export default function App() {
     const fileList : FileCardProps[] = [
         {
             name: "Card1",
+            fileType: "audio",
         },
         {
             name: "Card2",
+            fileType: "document",
         },
         {
             name: "Card3",
-        },
-        {
-            name: "Card6",
+            fileType: "audio",
         },
         {
             name: "Card4",
+            fileType: "document",
+        },
+        {
+            name: "Card5",
+            fileType: "audio",
         },
     ]
 

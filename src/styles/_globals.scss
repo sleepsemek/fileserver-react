@@ -1,11 +1,9 @@
 @use 'helpers' as *;
 
 body {
-  //display: flex;
-  //flex-direction: column;
   font-family: var(--font-family-base);
+  font-weight: 500;
   color: var(--color-dark);
-  //letter-spacing: -0.03em;
   background-color: var(--color-background);
 }
 
@@ -52,11 +50,13 @@ svg * {
   transition-duration: var(--transition-duration);
 }
 
+button *,
 a {
   color: inherit; // наследуем от body
 
   @include hover {
     color: var(--color-pink);
+    transition-duration: var(--transition-duration);
   }
 
   &[class] { // отключаем подчеркивание у тех ссылок, у которых уже есть классы
@@ -66,7 +66,7 @@ a {
 }
 
 :focus-visible { // при фокусировке с клавиатуры
-  outline: 2px dashed var(--color-dark);
+  outline: 2px dashed var(--color-primary);
   border-radius: 4px;
   outline-offset: 4px;
   transition-duration: 0s !important;

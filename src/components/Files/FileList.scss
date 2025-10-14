@@ -5,18 +5,18 @@
   gap: 16px;
 
   &--4-cols {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-    @include laptop {
+    @include mobile-s {
+      grid-template-columns: 1fr;
+    }
+
+    @include tablet-above {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    @include tablet {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include mobile {
-      grid-template-columns: 1fr;
+    @include laptop-above {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }

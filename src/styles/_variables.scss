@@ -2,8 +2,10 @@
 
 :root {
   --color-white: rgba(255, 255, 255, 0.5);
-  --color-white-opaque: #FFF;
-  --color-black: #000;
+  --color-white-opaque: #FFFFFF;
+  --color-black: #000000;
+
+  --color-primary: #0099FF;
 
   --color-dark: #0A0F1F;
   --color-dark-icon: #29353D;
@@ -14,6 +16,7 @@
   --color-container: #DEF0FC;
   --color-container-secondary: #FCE9DE;
   --color-container-tertiary: #DEFCF3;
+  --color-container-quaternary: #f2defc;
 
   --color-pink: #E87D7D;
 

@@ -73,3 +73,8 @@
     #{$property}: 0;
   }
 }
+
+@mixin range-thumb {
+  &::-webkit-slider-thumb { @content; }
+  &::-moz-range-thumb { @content; }
+}
