@@ -18,5 +18,9 @@
     @include laptop-above {
       grid-template-columns: repeat(4, 1fr);
     }
+
+    @include laptop-l-above {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 }

@@ -1,7 +1,20 @@
+$laptop-l: 1600.98;
 $laptop: 1440.98;
 $tablet: 1023.98;
 $mobile: 767.98;
 $mobile-s: 480.98;
+
+@mixin laptop-l-above {
+  @media (width > #{$laptop-l}px) {
+    @content;
+  }
+}
+
+@mixin laptop-l {
+  @media (width <= #{$laptop-l}px) {
+    @content;
+  }
+}
 
 @mixin laptop-above {
   @media (width > #{$laptop}px) {
