@@ -1,4 +1,4 @@
-import Icon, {type IconComponentType} from "../components/Icon.tsx";
+import Icon, {type IconComponentType} from "../ui/Icon/Icon.tsx";
 import type {PropsWithChildren} from "react";
 import "./Section.scss"
 

@@ -1,22 +1,20 @@
 import "./ControlsList.scss"
-import Icon, {type IconProps} from "../../Icon.tsx";
+import Icon, {type IconProps} from "../../ui/Icon/Icon.tsx";
+import {Link} from "react-router-dom";
 
 export type ControlsItemProps = {
     name: string
+    route: string
     icon: IconProps
 }
 
-export default function ControlsItem(controlsItemProps: ControlsItemProps) {
-    const {
-        name,
-        icon,
-    } = controlsItemProps
+export default function ControlsItem({name, route, icon}: ControlsItemProps) {
     return (
         <li className="controls__item">
-            <a href="" className="controls__link">
+            <Link to={route} className="controls__link">
                 <Icon {...icon} />
                 {name}
-            </a>
+            </Link>
         </li>
     )
 }

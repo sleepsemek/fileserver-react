@@ -1,15 +1,17 @@
 import "./NavCard.scss"
-import Icon, {type IconProps} from "../../Icon.tsx";
+import Icon, {type IconProps} from "../../ui/Icon/Icon.tsx";
+import {Link} from "react-router-dom";
 
 export type NavCardProps = {
     name: string
+    route: string
     icon: IconProps
     hasNew?: boolean | null
 }
 
-export default function NavCard({ name, icon, hasNew } : NavCardProps) {
+export default function NavCard({ name, route, icon, hasNew } : NavCardProps) {
     return (
-        <a href="" className="nav-card">
+        <Link to={route} className="nav-card">
             <div className="nav-card__header">
                 <Icon {...icon} />
                 {hasNew && (
@@ -17,6 +19,6 @@ export default function NavCard({ name, icon, hasNew } : NavCardProps) {
                 )}
             </div>
             <div className="nav-card__title h4">{name}</div>
-        </a>
+        </Link>
     )
 }

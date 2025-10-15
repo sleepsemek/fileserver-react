@@ -1,6 +1,42 @@
+@use '@/styles/helpers' as *;
+
 .content {
   padding: 40px 25px;
   display: flex;
   flex-direction: column;
   row-gap: 48px;
+}
+
+.app {
+  &__background {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url("@/assets/images/background.jpg") center / contain no-repeat;
+    background-size: 150% auto;
+    filter: blur(20px);
+  }
+
+  &__content  {
+    --sidebar-width: 435px;
+
+    display: grid;
+    position: relative;
+    background-color: var(--color-background);
+
+    @include tablet {
+      --sidebar-width: 300px;
+    }
+
+    @include mobile-above {
+      grid-template-columns: var(--sidebar-width) auto;
+    }
+  }
+
+  &__main {
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+  }
 }

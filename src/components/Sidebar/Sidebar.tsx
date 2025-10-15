@@ -7,9 +7,10 @@ import {
     IconHome,
     IconPhotos, IconRecycle, IconSettings,
     IconVideos
-} from "../Icon.tsx";
+} from "../ui/Icon/Icon.tsx";
 import NotificationButton from "./NotificationButton.tsx";
 import ControlsList from "./Controls/ControlsList.tsx";
+import {Link} from "react-router-dom";
 
 type SidebarProps = {
     title: string,
@@ -20,6 +21,7 @@ export default function Sidebar({ title } : SidebarProps) {
     const navElements = [
         {
             name: "Home",
+            route: "/",
             icon: {
                 icon: IconHome,
                 color: '#11BBF8',
@@ -30,6 +32,7 @@ export default function Sidebar({ title } : SidebarProps) {
         },
         {
             name: "Videos",
+            route: "/videos",
             icon: {
                 icon: IconVideos,
                 color: '#C211F8',
@@ -39,6 +42,7 @@ export default function Sidebar({ title } : SidebarProps) {
         },
         {
             name: "Photo Gallery",
+            route: "/photos",
             icon: {
                 icon: IconPhotos,
                 color: '#F84E11',
@@ -48,6 +52,7 @@ export default function Sidebar({ title } : SidebarProps) {
         },
         {
             name: "Documents",
+            route: "/documents",
             icon: {
                 icon: IconDocuments,
                 color: '#47F811',
@@ -58,6 +63,7 @@ export default function Sidebar({ title } : SidebarProps) {
         },
         {
             name: "Analytics",
+            route: "/analytics",
             icon: {
                 icon: IconAnalytics,
                 color: '#41EDBA',
@@ -68,6 +74,7 @@ export default function Sidebar({ title } : SidebarProps) {
         },
         {
             name: "Favorites",
+            route: "/favorites",
             icon: {
                 icon: IconFavorites,
                 color: '#E87D7D',
@@ -80,6 +87,7 @@ export default function Sidebar({ title } : SidebarProps) {
     const controlsElements = [
         {
             name: "Archive",
+            route: "/archive",
             icon: {
                 icon: IconArchive,
                 color: '#0A0F1F',
@@ -89,6 +97,7 @@ export default function Sidebar({ title } : SidebarProps) {
         },
         {
             name: "Recycle",
+            route: "/recycle",
             icon: {
                 icon: IconRecycle,
                 color: '#0A0F1F',
@@ -98,6 +107,7 @@ export default function Sidebar({ title } : SidebarProps) {
         },
         {
             name: "Settings",
+            route: "/settings",
             icon: {
                 icon: IconSettings,
                 color: '#0A0F1F',
@@ -110,9 +120,9 @@ export default function Sidebar({ title } : SidebarProps) {
     return (
         <aside className="sidebar">
             <header className="sidebar__header">
-                <a href="" className="sidebar__logo h1">
+                <Link to="/" className="sidebar__logo h1">
                     { title }
-                </a>
+                </Link>
                 <NotificationButton hasNotification={true} />
             </header>
             <div className="sidebar__controls">

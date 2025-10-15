@@ -1,8 +1,8 @@
 import "./FileCard.scss"
-import Icon, {IconAudio, IconDocument, IconEye, IconHeart, IconPen, IconPlay, IconVolume} from "../Icon.tsx";
+import Icon, {IconAudio, IconDocument, IconEye, IconHeart, IconPen, IconPlay, IconVolume} from "../ui/Icon/Icon.tsx";
 import {type ReactNode, useState} from "react";
-import IconButton from "../IconButton.tsx";
-import SeekBar from "../SeekBar.tsx";
+import IconButton from "../ui/IconButton/IconButton.tsx";
+import SeekBar from "../ui/SeekBar/SeekBar.tsx";
 
 export type FileCardProps = {
     name: string
@@ -17,9 +17,9 @@ const iconMap = {
     "document" : IconDocument
 }
 
-const cardVariants = ["", "file-card--secondary", "file-card--tertiary", "file-card--quaternary"]
+const cardVariants = ["file-card--primary", "file-card--secondary", "file-card--tertiary", "file-card--quaternary"]
 
-export default function FileCard({ name, fileType, filePreview } : FileCardProps) {
+export default function FileCard({ name, fileType } : FileCardProps) {
     const hasTextHeader = fileType === "audio" || fileType === "document"
     const [randomCardVariant] = useState(() => cardVariants[Math.floor(Math.random() * 4)])
     const [isPlaying, setIsPlaying] = useState(false)

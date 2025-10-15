@@ -1,7 +1,6 @@
 @use "@/styles/helpers" as *;
 
 .file-card {
-  background-color: var(--color-container);
   border-radius: 24px;
   display: flex;
   flex-direction: column;
@@ -9,6 +8,10 @@
   justify-content: space-between;
   min-height: 196px;
   padding: 2px;
+
+  &--primary {
+    background-color: var(--color-container);
+  }
 
   &--secondary {
     background-color: var(--color-container-secondary);

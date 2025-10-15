@@ -53,6 +53,7 @@ svg * {
 button *,
 a {
   color: inherit; // наследуем от body
+  -webkit-user-drag: none;
 
   @include hover {
     color: var(--color-pink);
