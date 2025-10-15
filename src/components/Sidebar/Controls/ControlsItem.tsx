@@ -12,7 +12,7 @@ export default function ControlsItem({name, route, icon}: ControlsItemProps) {
     return (
         <li className="controls__item">
             <Link to={route} className="controls__link">
-                <Icon {...icon} />
+                <Icon {...icon}/>
                 {name}
             </Link>
         </li>

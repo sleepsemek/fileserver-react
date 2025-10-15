@@ -72,3 +72,13 @@ a {
   outline-offset: 4px;
   transition-duration: 0s !important;
 }
+
+@keyframes breathing {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.2
+  }
+}

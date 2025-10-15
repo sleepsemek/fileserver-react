@@ -90,7 +90,6 @@ export default function Sidebar({ title } : SidebarProps) {
             route: "/archive",
             icon: {
                 icon: IconArchive,
-                color: '#0A0F1F',
                 background: true,
                 size: 30
             }
@@ -100,7 +99,6 @@ export default function Sidebar({ title } : SidebarProps) {
             route: "/recycle",
             icon: {
                 icon: IconRecycle,
-                color: '#0A0F1F',
                 background: true,
                 size: 30
             }
@@ -110,7 +108,6 @@ export default function Sidebar({ title } : SidebarProps) {
             route: "/settings",
             icon: {
                 icon: IconSettings,
-                color: '#0A0F1F',
                 background: true,
                 size: 30
             }
@@ -123,7 +120,7 @@ export default function Sidebar({ title } : SidebarProps) {
                 <Link to="/" className="sidebar__logo h1">
                     { title }
                 </Link>
-                <NotificationButton hasNotification={true} />
+                <NotificationButton hasNotification onClick={() => {}}/>
             </header>
             <div className="sidebar__controls">
                 <NavList navElements={navElements} />

@@ -14,7 +14,7 @@ export type IconProps = {
 
 export default function Icon({
     icon: IconComponent,
-    color = '#000',
+    color = 'inherit',
     background = false,
     size = 24,
     ariaLabel = "",
